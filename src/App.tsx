@@ -9,15 +9,15 @@ import AutocompletePage from './pages/autocomplete/autocompletePage';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/components-lib/",
     element: <GlobalLayout/>,
     children :[
       {
-        path : '/autocomplete',
+        path : '*',
         element : <AutocompletePage/>
       },
       {
-        path : "/test",
+        path : "test",
         element : <TestComponent/>
       }
     ]
