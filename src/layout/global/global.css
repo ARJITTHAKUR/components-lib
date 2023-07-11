@@ -1,10 +1,18 @@
 :root {
    
 }
-
+.main-layout-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--darkblue-background);
+    overflow: hidden;
+}
 .app-container {
     display: flex;
-    height: 100vh;
+    width: 70%;
+    /* height: 100vh; */
     align-items: stretch;
 }
 .nav-container {
@@ -14,6 +22,7 @@
     color: var(--light-text-white);
     flex: 1;
     justify-content: space-between;
+    align-items: stretch;
     border-right: 0.5px solid var(--side-border);
 }
 
@@ -42,4 +51,20 @@
 .nav-ul {
     text-decoration: none;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.nav-ul li a {
+    display: block;
+    text-decoration: none;
+    font-size: large;
+    font-weight: 400;
+    padding: 0.3rem 1rem;
+    color: var(--light-text-white);
+}
+
+.nav-ul li a:hover {
+    background-color: #0c4a6e;
 }

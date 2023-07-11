@@ -1,31 +1,90 @@
 import AutoComplete from "../../components/autocomplete/Autocomplete";
 
 export default function AutocompletePage() {
+  const list = [
+    { label: "City of God", year: 2002 },
+    { label: "Se7en", year: 1995 },
+    { label: "The Silence of the Lambs", year: 1991 },
+    { label: "It's a Wonderful Life", year: 1946 },
+    { label: "Life Is Beautiful", year: 1997 },
+    { label: "The Usual Suspects", year: 1995 },
+    { label: "Léon: The Professional", year: 1994 },
+    { label: "Spirited Away", year: 2001 },
+    { label: "Saving Private Ryan", year: 1998 },
+    { label: "Once Upon a Time in the West", year: 1968 },
+    { label: "American History X", year: 1998 },
+    { label: "Interstellar", year: 2014 },
+    { label: "Casablanca", year: 1942 },
+    { label: "City Lights", year: 1931 },
+    { label: "Psycho", year: 1960 },
+    { label: "The Green Mile", year: 1999 },
+    { label: "The Intouchables", year: 2011 },
+    { label: "Modern Times", year: 1936 },
+    { label: "Raiders of the Lost Ark", year: 1981 },
+    { label: "Rear Window", year: 1954 },
+    { label: "The Pianist", year: 2002 },
+    { label: "The Departed", year: 2006 },
+    { label: "Terminator 2: Judgment Day", year: 1991 },
+    { label: "Back to the Future", year: 1985 },
+    { label: "Whiplash", year: 2014 },
+    { label: "Gladiator", year: 2000 },
+    { label: "Memento", year: 2000 },
+    { label: "The Prestige", year: 2006 },
+    { label: "The Lion King", year: 1994 },
+    { label: "Apocalypse Now", year: 1979 },
+    { label: "Alien", year: 1979 },
+    { label: "Sunset Boulevard", year: 1950 },
+  ];
   return (
     <>
-    <div className="container">
+      <div className="container">
+        <h1 className="heading-title">Auto Complete</h1>
 
-      <h1 className="heading-title">Auto compelete</h1>
-    
-      <section className="section-display">
-        <h3 className="color-light">Default Autocomplete</h3>
-        <div className="flex-and-wrap">
-
-        <AutoComplete key={1}/>
-        <AutoComplete key={2}/>
-        <AutoComplete key={3}/>
-        <AutoComplete key={4}/>
-        <AutoComplete key={6}/>
-        <AutoComplete key={7}/>
-        <AutoComplete key={8}/>
-        <AutoComplete key={9}/>
-        <AutoComplete key={10}/>
-        <AutoComplete key={11}/>
-
-
-        </div>
-      </section>
-    </div>
+        <section className="section-display">
+          <h3 className="color-light">Default Autocomplete</h3>
+          <div className="flex-and-wrap">
+            <AutoComplete
+              key={1}
+              placeholder="Simple placeholder"
+              options={list.map((ele) => ele.label)}
+              onSelecChange={(data) => {
+                console.log(data);
+              }}
+            />
+            {/* <AutoComplete key={2} />
+            <AutoComplete key={3} />
+            <AutoComplete key={4} />
+            <AutoComplete key={6} />
+            <AutoComplete key={7} />
+            <AutoComplete key={8} />
+            <AutoComplete key={9} />
+            <AutoComplete key={10} />
+            <AutoComplete key={11} /> */}
+          </div>
+          {/* <pre>
+            <code>
+              <AutoComplete
+                key={1}
+                placeholder="Simple placeholder"
+                options={list.map((ele) => ele.label)}
+                onSelecChange={(data) => {
+                  console.log(data);
+                }}
+              />
+            </code>
+          </pre> */}
+        </section>
+        <section className="section-display">
+          <h3 className="color-light">Multi Autocomplete</h3>
+          <div className="flex-and-wrap">
+            <AutoComplete
+             key={1}
+             options={list.map((ele) => ele.label)}
+             multi
+             />
+          </div>
+        </section>
+      </div>
     </>
   );
 }
