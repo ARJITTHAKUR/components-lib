@@ -1,0 +1,72 @@
+@import"../../global/variable.css";
+
+.new_input_wrapper {
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border: 1px solid var(--side-border);
+    position: relative;
+}
+.new_input_wrapper:hover{
+    outline-color: var(--hightlight_border);
+    outline-width: 1px;
+    outline-style: solid;
+}
+
+.input_label {
+    position: absolute;
+    transform: translate(10px , 5px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.input_input {
+    padding: 0.5rem 0.5rem;
+    border: none;
+    border: none;
+    outline: none;
+    appearance: none;
+}
+
+.hide {
+    display: none;
+}
+.show_fieldSet{
+    position: absolute;
+    top : -8px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 1.2rem;
+    outline-color: var(--hightlight_border);
+    color: var(--hightlight_border);
+    animation: slide 1s;
+    border-color: var(--hightlight_border);
+}
+.wrapper_clicked {
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    position: relative;
+    outline: none;
+    border: none;
+}
+
+@keyframes slide {
+    0% {
+        display: none;
+    }
+    100% {
+        display: inline-block;
+    }
+}
+
+.btn_up {
+}
+.btn_down {
+    transform: rotate(180deg);
+}
+
+/* .input_icon_btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+} */

@@ -1,4 +1,5 @@
 import AutoComplete from "../../components/autocomplete/Autocomplete";
+import NewAutoComplete from "../../components/newAutoComplete/newAutoComplete";
 
 export default function AutocompletePage() {
   const list = [
@@ -83,6 +84,9 @@ export default function AutocompletePage() {
              multi
              />
           </div>
+        </section>
+        <section className="section-display">
+          <NewAutoComplete/>
         </section>
       </div>
     </>
