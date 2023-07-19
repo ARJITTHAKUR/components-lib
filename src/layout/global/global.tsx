@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import "./global.css";
 import { Link, Outlet } from "react-router-dom";
+import { Bars3Icon } from "@heroicons/react/24/outline";
 export const GlobalLayout = () => {
   const navRef = useRef<HTMLElement | null>(null);
   const navList = useRef<HTMLUListElement | null>(null);
@@ -27,13 +28,17 @@ export const GlobalLayout = () => {
     <>
       <div className="main-layout-container">
         <div className="app-container">
-          <nav className="nav-container" ref={navRef}>
+          {
+            navClose &&  
+            <Bars3Icon height={20} width={20}  onClick={() => toggleNav()} className="close-btn-mobile"/>
+          }
+          <nav className="nav-container" ref={navRef} style={{width:navClose ? '0px' : "100%", display:navClose?'none':'block'}}>
             <ul ref={navList} className="nav-ul">
               <li>
-                <Link to={`test`}>Test Component</Link>
+                <Link to={`test`} onClick={() => toggleNav()}>Test Component</Link>
               </li>
               <li>
-                <Link to={`autocomplete`}>Auto complete</Link>
+                <Link to={`autocomplete`} onClick={() => toggleNav()}>Auto complete</Link>
               </li>
             </ul>
             <div className="close-btn-container">
