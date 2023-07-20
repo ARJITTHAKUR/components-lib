@@ -42,7 +42,7 @@
 
 .list-items{
     position: absolute;
-    background-color: var(--dark-black-bg);
+    background-color: white;
     padding: 0px;
     color: var(--light-text-white);
     list-style-type: none;

@@ -39,7 +39,7 @@ export default function AutocompletePage() {
   return (
     <>
       <div className="container">
-        <h1 className="heading-title">Auto Complete</h1>
+        {/* <h1 className="heading-title">Auto Complete</h1>
 
         <section className="section-display">
           <h3 className="color-light">Default Autocomplete</h3>
@@ -52,30 +52,9 @@ export default function AutocompletePage() {
                 console.log(data);
               }}
             />
-            {/* <AutoComplete key={2} />
-            <AutoComplete key={3} />
-            <AutoComplete key={4} />
-            <AutoComplete key={6} />
-            <AutoComplete key={7} />
-            <AutoComplete key={8} />
-            <AutoComplete key={9} />
-            <AutoComplete key={10} />
-            <AutoComplete key={11} /> */}
           </div>
-          {/* <pre>
-            <code>
-              <AutoComplete
-                key={1}
-                placeholder="Simple placeholder"
-                options={list.map((ele) => ele.label)}
-                onSelecChange={(data) => {
-                  console.log(data);
-                }}
-              />
-            </code>
-          </pre> */}
-        </section>
-        <section className="section-display">
+        </section> */}
+        {/* <section className="section-display">
           <h3 className="color-light">Multi Autocomplete</h3>
           <div className="flex-and-wrap">
             <AutoComplete
@@ -84,9 +63,12 @@ export default function AutocompletePage() {
              multi
              />
           </div>
-        </section>
+        </section> */}
         <section className="section-display">
-          <NewAutoComplete/>
+        <h3 className="color-light">Default Autocomplete</h3>
+          <NewAutoComplete 
+           options={list.map((ele) => ele.label)}
+          />
         </section>
       </div>
     </>
