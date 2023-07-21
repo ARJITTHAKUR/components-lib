@@ -1,7 +1,7 @@
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/20/solid";
 import "./style.css";
 import { useEffect, useRef, useState } from "react";
-import { ForwardList } from "../autocomplete/list";
+import NewList from "./newListComponent";
 interface props {
   placeholder?: string;
   options?: string[];
@@ -9,27 +9,24 @@ interface props {
   multi?: boolean;
 }
 
-
-export default function NewAutoComplete({options}: props) {
+export default function NewAutoComplete({ options }: props) {
   // states
   const [clicked, setClicked] = useState(false);
   const [optionList, setoptionList] = useState<string[]>(options);
-
 
   // refs
   const inputRef = useRef<HTMLInputElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const listRef = useRef<HTMLUListElement>(null)
-
+  const listRef = useRef<HTMLUListElement>(null);
 
   const handleClick = () => {
     setClicked((prev) => !prev);
-    inputRef.current.focus()
+    // wrapperRef.current.style.pointerEvents = 'none'
+    inputRef.current.focus();
   };
 
   const handleOutsideClick = (e) => {
-    console.log({ e });
     if (!wrapperRef.current.contains(e.target)) {
       setClicked(false);
     }
@@ -40,17 +37,27 @@ export default function NewAutoComplete({options}: props) {
   };
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
-    // const filtered = options.filter(ele=>ele.includes(e.target.value))
+    if(!clicked)
+    setClicked(true)
     const regEx = new RegExp(e.target.value, "gi");
     const filtered = options.filter((ele) => regEx.test(ele));
     setoptionList(filtered);
   };
-  
+
   const handleRemove = () => {
     inputRef.current.value = "";
     setoptionList(options);
   };
+
+  const handleSelect = (data: string) => {
+    inputRef.current.value = data;
+    setClicked(false);
+  };
+  const clearInput = (e: React.MouseEvent)=>{
+    e.preventDefault()
+    inputRef.current.value = ''
+
+  }
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
     return () => {
@@ -59,43 +66,71 @@ export default function NewAutoComplete({options}: props) {
   }, [wrapperRef]);
   return (
     <div
-      className={(clicked || inputRef?.current?.value?.length > 0) ? "wrapper_clicked" : "new_input_wrapper"}
+      className={
+        clicked || inputRef?.current?.value?.length > 0
+          ? "wrapper_clicked"
+          : "new_input_wrapper"
+      }
       onClick={() => {
         handleClick();
       }}
       ref={wrapperRef}
     >
-      <label htmlFor="" className={(clicked || inputRef?.current?.value?.length > 0)  ? "hide" : "input_label"}>
+      <label
+        htmlFor=""
+        className={
+          clicked || inputRef?.current?.value?.length > 0
+            ? "hide"
+            : "input_label"
+        }
+      >
         Choose
       </label>
-      <input type="text" className="input_input" ref={inputRef} onChange={(e)=>handleChange(e)}/>
-      <button className="input_icon_btn">
-        <ChevronDownIcon height={20} width={20} className={clicked ? "btn_up" : "btn_down"}/>
+      <input
+        type="text"
+        className="input_input"
+        ref={inputRef}
+        onChange={(e) => handleChange(e)}
+      />
+      <span className="btn_container">
+      <span tabIndex={-1}><XMarkIcon height={20} width={20} onClick={(e)=>clearInput(e)}
+       style={{visibility : inputRef?.current?.value.length > 0  ? 'visible':'hidden',
+       cursor:"pointer",
+       }}
+       /></span>
+    
+      <button className="input_icon_btn" tabIndex={-1}>
+        <ChevronDownIcon
+          height={20}
+          width={20}
+          className={clicked ? "btn_up" : "btn_down"}
+        />
       </button>
-      
-        <fieldset className={(clicked || inputRef?.current?.value?.length > 0) ? "show_fieldSet" : "hide"}>
-          <legend >
-            <span className="legend_animation">
-            Choose
-            </span>
-            </legend>
-        </fieldset>
+      </span>
 
-        {clicked && (
-        <ForwardList
+      <fieldset
+        className={
+          clicked || inputRef?.current?.value?.length > 0
+            ? "show_fieldSet"
+            : "hide"
+        }
+      >
+        <legend>
+          <span className="legend_animation">Choose</span>
+        </legend>
+      </fieldset>
+
+      {clicked && (
+        <NewList
+          key={"option-list"}
           options={optionList}
-          ref={listRef}
           position={{
             top: wrapperRef.current?.getBoundingClientRect().top,
             left: wrapperRef.current?.getBoundingClientRect().left,
             bottom: wrapperRef.current?.getBoundingClientRect().bottom,
             offsetWidth: wrapperRef.current?.offsetWidth,
           }}
-          onSelect={(data) => {
-            // onSelect(data);
-            console.log({data})
-            inputRef.current.value = data
-          }}
+          onSelect={(data) => handleSelect(data)}
         />
       )}
     </div>

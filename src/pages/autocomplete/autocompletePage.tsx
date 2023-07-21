@@ -49,7 +49,6 @@ export default function AutocompletePage() {
               placeholder="Simple placeholder"
               options={list.map((ele) => ele.label)}
               onSelecChange={(data) => {
-                console.log(data);
               }}
             />
           </div>

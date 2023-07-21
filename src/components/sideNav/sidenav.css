@@ -1,0 +1,40 @@
+.floating_toggle{
+    position: absolute;
+    top : 0;
+    left:0;
+    margin : 0.5rem;
+}
+
+.nav_container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: white;
+    /* color: var(--light-text-white); */
+    flex: 1;
+    justify-content: space-between;
+    align-items: stretch;
+    border-right: 0.5px solid var(--side-border);
+}
+
+@media (max-width: 600px) {
+    .nav_container {
+        position: absolute;
+        top:0px;
+        left:0px;
+        height: 100vh;
+        background-color: white;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-between;
+        background-color: white;
+    }
+    .close-btn-mobile {
+        position: absolute;
+        border: none;
+        top:0;
+        left:0;
+    }
+}

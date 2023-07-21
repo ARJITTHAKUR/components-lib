@@ -15,12 +15,9 @@ interface listProps {
 
 
 const List = ({ options, position, onSelect, ref }: listProps) => {
-    //   console.log({ options, position });
     const transformValue = `translateY(30px)`;
     const handlekeyUp = (e) => {
-      // console.log(e)
       if (e.key === "Enter") {
-        console.log(e.target.value);
         onSelect(e.target.value);
       }
     };
@@ -60,7 +57,6 @@ const List = ({ options, position, onSelect, ref }: listProps) => {
                     tabIndex={0}
                     role="listitem"
                     onFocus={() => {
-                      console.log("focused");
                     }}
                   >
                     {str}

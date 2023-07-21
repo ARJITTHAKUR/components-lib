@@ -27,7 +27,6 @@ export default function AutoComplete({
     // bodyRef.current?.appendChild(<List/>)
   };
   useEffect(() => {
-    console.log("input ref", { value: inputRef.current.value });
   }, [inputRef]);
   const onSelect = (data) => {
     // inputRef.current.focus()
@@ -36,7 +35,6 @@ export default function AutoComplete({
       setToggleList(false);
       return;
     }
-    // console.log(data)
     onSelecChange(data);
     setToggleList(false);
     inputRef.current.value = data;
@@ -47,7 +45,6 @@ export default function AutoComplete({
   };
 
   const handleChange = (e) => {
-    console.log(e.target.value);
     // const filtered = options.filter(ele=>ele.includes(e.target.value))
     const regEx = new RegExp(e.target.value, "gi");
     const filtered = options.filter((ele) => regEx.test(ele));
@@ -67,7 +64,6 @@ export default function AutoComplete({
         && !listRef.current.contains(event.target)
       ) {
         // alert('outside')
-        console.log("ouside");
         setToggleList(false);
       }
     }
