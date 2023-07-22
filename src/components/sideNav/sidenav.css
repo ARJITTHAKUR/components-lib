@@ -1,40 +1,109 @@
-.floating_toggle{
-    position: absolute;
-    top : 0;
-    left:0;
-    margin : 0.5rem;
+@import "../../global/variable.css";
+
+.floating_toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* margin: 0.5rem; */
 }
 
 .nav_container {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    background-color: white;
-    /* color: var(--light-text-white); */
-    flex: 1;
-    justify-content: space-between;
-    align-items: stretch;
-    border-right: 0.5px solid var(--side-border);
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background-color: white;
+  flex: 1;
+  justify-content: space-between;
+  align-items: stretch;
+  border-right: 0.5px solid var(--side-border);
+}
+
+.close-btn-container {
+  display: flex;
+  justify-content: center;
+}
+.close-btn {
+  display: none;
+  border: none;
+  padding: 0.2rem;
+  font-size: large;
+  text-decoration: underline;
+}
+
+.nav-ul {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding: 0;
+  gap:0.5rem
+}
+.nav-ul li {
+  width: 100%;
+  text-align: center;
+}
+.nav-ul li:hover {
+    background-color: var(--light-text-hover);
+  }
+.nav-ul li a {
+  display: block;
+  text-decoration: none;
+  font-size: medium;
+  font-weight: 400;
+  padding: 0.3rem 1rem;
+}
+.close-btn-mobile {
+  display: none;
+}
+.pending {
+  color: lightslategray;
+}
+.pending:hover {
+  color: var(--light-text-color);
+}
+.active {
+  color: var(--light-text-color);
+  background-color: var(--light-text-bg);
+  border-left: 4px solid var(--light-text-hover);
+  border-right: 4px solid var(--light-text-hover);
 }
 
 @media (max-width: 600px) {
-    .nav_container {
-        position: absolute;
-        top:0px;
-        left:0px;
-        height: 100vh;
-        background-color: white;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: space-between;
-        background-color: white;
-    }
-    .close-btn-mobile {
-        position: absolute;
-        border: none;
-        top:0;
-        left:0;
-    }
+  .nav_container {
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    background-color: white;
+    z-index: 10;
+    display: inline;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    animation: slideInNav 0.3s ease-in-out;
+  }
+  .close-btn-mobile {
+    display: block;
+    position: absolute;
+    border: none;
+    top: 0;
+    left: 0;
+  }
+  .close-btn {
+    display: block;
+  }
+}
+
+@keyframes slideInNav {
+  0% {
+    width: 50%;
+  }
+  80% {
+    width: 90%;
+  }
 }

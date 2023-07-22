@@ -6,6 +6,7 @@ import {
 import { GlobalLayout } from './layout/global/global';
 import TestComponent from './components/testComponent/testComponent';
 import AutocompletePage from './pages/autocomplete/autocompletePage';
+import ButtonsPage from './pages/buttonsPage/buttonsPage';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path : "test",
         element : <TestComponent/>
+      },
+      {
+        path : "button",
+        element : <ButtonsPage/>
       }
     ]
   }

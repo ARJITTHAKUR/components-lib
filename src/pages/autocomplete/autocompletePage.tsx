@@ -39,32 +39,16 @@ export default function AutocompletePage() {
   return (
     <>
       <div className="container">
-        {/* <h1 className="heading-title">Auto Complete</h1>
-
-        <section className="section-display">
-          <h3 className="color-light">Default Autocomplete</h3>
-          <div className="flex-and-wrap">
-            <AutoComplete
-              key={1}
-              placeholder="Simple placeholder"
-              options={list.map((ele) => ele.label)}
-              onSelecChange={(data) => {
-              }}
-            />
-          </div>
-        </section> */}
-        {/* <section className="section-display">
-          <h3 className="color-light">Multi Autocomplete</h3>
-          <div className="flex-and-wrap">
-            <AutoComplete
-             key={1}
-             options={list.map((ele) => ele.label)}
-             multi
-             />
-          </div>
-        </section> */}
         <section className="section-display">
         <h3 className="color-light">Default Autocomplete</h3>
+        <pre>
+                <code>
+                  
+                &lt;NewAutoComplete 
+          /&gt;
+          options=list
+                </code>
+            </pre>
           <NewAutoComplete 
            options={list.map((ele) => ele.label)}
           />
