@@ -70,8 +70,11 @@
   background-color: var(--light-text-bg);
   border-left: 4px solid var(--light-text-hover);
   border-right: 4px solid var(--light-text-hover);
+  padding : 0.5rem 0rem;
 }
-
+.notactive{
+  background-color: rgb(232, 232, 232);
+}
 @media (max-width: 600px) {
   .nav_container {
     height: 100vh;

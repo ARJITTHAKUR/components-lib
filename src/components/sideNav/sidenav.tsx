@@ -75,7 +75,7 @@ export default function SideNavigation() {
                 to={`autocomplete`}
                 onClick={() => toggleNav()}
                 className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
+                isPending ? "pending" : isActive ? "active" : "notactive"
               }
               >
                 Auto complete
@@ -86,10 +86,43 @@ export default function SideNavigation() {
                 to={`button`}
                 onClick={() => toggleNav()}
                 className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
+                isPending ? "pending" : isActive ? "active" : "notactive"
               }
               >
                Buttons
+              </NavLink>
+            </li>
+            <li >
+              <NavLink
+                to={`checkbox`}
+                onClick={() => toggleNav()}
+                className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : "notactive"
+              }
+              >
+               Checkbox
+              </NavLink>
+            </li>
+            <li >
+              <NavLink
+                to={`radiogroup`}
+                onClick={() => toggleNav()}
+                className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : "notactive"
+              }
+              >
+               Radio Group
+              </NavLink>
+            </li>
+            <li >
+              <NavLink
+                to={`rating`}
+                onClick={() => toggleNav()}
+                className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : "notactive"
+              }
+              >
+               Rating
               </NavLink>
             </li>
           </ul>
