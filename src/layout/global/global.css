@@ -23,6 +23,7 @@
     flex: 5;
     /* background-color: var(--darkblue-background); */
     padding: 1rem;
+    overflow-y: scroll;
 }
 
 

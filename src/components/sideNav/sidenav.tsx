@@ -8,7 +8,6 @@ export default function SideNavigation() {
 
   const toggleNav = () => {
     if (document.body.clientWidth < 600) {
-      console.log(document.body.clientWidth);
 
       if (navRef?.current?.style.flex === "0 1 0%") {
         navRef.current.style.flex = "1 1 0%";

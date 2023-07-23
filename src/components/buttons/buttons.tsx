@@ -6,7 +6,6 @@ interface props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     onClick : (e)=>void;
 }
 export default function Button(props:props){
-    console.log({props})
     const spanRef = useRef<HTMLSpanElement>(null)
     const buttonRef = useRef<HTMLButtonElement>(null);
 
