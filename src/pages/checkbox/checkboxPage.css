@@ -3,3 +3,13 @@
     flex-direction: column;
     gap: 2rem;
 }
+.code_snippet_checkbox{
+    height: 10vh;
+    width: 100%;
+    word-wrap: normal;
+    resize: none;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    min-height: 5vh;
+    max-height: 20vh;
+}

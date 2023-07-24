@@ -49,7 +49,7 @@ export default function Checkbox(props: props) {
         </span>
         </>
       )}
-      <span ref={rippleRef} className="checkbox_ripple"></span>
+      <span ref={rippleRef}></span>
     </span>
      <span style={{cursor:'pointer'}}>{props.label}</span>
     </span>

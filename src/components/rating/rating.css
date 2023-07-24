@@ -1,0 +1,5 @@
+.rating_container{
+    display: inline-flex;
+    gap:1rem;
+    justify-content: center;
+}

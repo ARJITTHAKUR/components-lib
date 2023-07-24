@@ -1,6 +1,6 @@
 .radio_wrapper{
     display: inline-flex;
-    gap:0.5rem;
+    gap:1rem;
     position: relative;
 }
 .radio_container{
@@ -12,10 +12,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    animation: ripple 300ms linear;
     background-color: white;
-}
+    transition: all 300ms;
 
+}
+.emptyClass {
+    display: inline;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 .unchecked_radio{
     position: absolute;
     top:0;
@@ -34,15 +42,18 @@
     height: 100%;
     border: 1px solid black;
     border-radius: 5px;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.8rem;
+    height: 0.8rem;
     transform: scale(0);
     background-color: rgba(116, 116, 116, 0.7);
-    animation: ripple 300ms linear;
+    animation: ripple 200ms linear;
+}
+.input_radio_margin{
+    margin-right: 0.5rem;
 }
 @keyframes ripple {
     to {
-        transform: scale(2);
+        transform: scale(3);
         opacity: 0;
     }
 }

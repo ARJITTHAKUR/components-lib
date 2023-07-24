@@ -1,6 +1,6 @@
 import { StarIcon } from "@heroicons/react/24/outline"
 import { FunctionComponent, useState } from "react"
-
+import  "./rating.css"
 interface props extends React.HtmlHTMLAttributes<HTMLSpanElement>{
     children : React.ReactNode,
     defaultValue ?: number,
@@ -26,7 +26,8 @@ export const RatingWidget: FunctionComponent<props> = (props:props)=>{
     }
     return (
         <>
-            <span>
+        <span className="rating_container">
+            <span className="rating_label">
                 {
                     props.children
                 }
@@ -46,6 +47,8 @@ export const RatingWidget: FunctionComponent<props> = (props:props)=>{
 
                 }
             </span>
+        </span>
+
         </>
     )
 }

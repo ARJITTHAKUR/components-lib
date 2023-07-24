@@ -12,6 +12,15 @@ export default function CheckBoxPage(){
                 label="Label"
                 </code>
             </pre>
+            <textarea
+            disabled
+                wrap="off"
+                className="code_snippet_checkbox"
+                placeholder={`
+                <Checkbox onClick={(e)=>console.log({e})}/>
+                <Checkbox onClick={(e)=>console.log({e})} label="Label"/>
+                `}
+              ></textarea>
             <div className="flex_container">
             <Checkbox onClick={(e)=>console.log({e})}/>
             <Checkbox onClick={(e)=>console.log({e})} label="Label"/>
