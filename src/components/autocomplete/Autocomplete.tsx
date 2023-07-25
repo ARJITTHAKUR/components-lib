@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./autocomplete.css";
+import "./autocomplete.module.css";
 import ReactDOM from "react-dom";
 import { ForwardList } from "./list";
 
