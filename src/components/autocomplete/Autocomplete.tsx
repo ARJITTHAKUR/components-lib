@@ -29,7 +29,6 @@ export default function AutoComplete({
   useEffect(() => {
   }, [inputRef]);
   const onSelect = (data) => {
-    // inputRef.current.focus()
     if (multi) {
       setMultiList((prev) => [...prev, data]);
       setToggleList(false);
@@ -45,7 +44,6 @@ export default function AutoComplete({
   };
 
   const handleChange = (e) => {
-    // const filtered = options.filter(ele=>ele.includes(e.target.value))
     const regEx = new RegExp(e.target.value, "gi");
     const filtered = options.filter((ele) => regEx.test(ele));
     setoptionList(filtered);
@@ -63,7 +61,6 @@ export default function AutoComplete({
         !inputContainerRef.current.contains(event.target)
         && !listRef.current.contains(event.target)
       ) {
-        // alert('outside')
         setToggleList(false);
       }
     }

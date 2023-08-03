@@ -10,7 +10,6 @@
 }
 .default-input-style {
     padding : 0.5rem;
-    /* border : 1px solid var(--side-border); */
     border: none;
     border-radius: 0.2rem;
     color: var(--light-text-white);
@@ -18,13 +17,11 @@
     outline: none;
 }
 .default-input-style:hover {
-    /* border : 1px solid var(--hightlight-border) */
 }
 .default-input-style:focus{
     outline: 1px solid var(--hightlight-border) ;
 }
 .input-wrapper{
-    /* display: inline-block; */
     background-color: #111827;
     position: relative;
     border : 1px solid var(--side-border);
@@ -34,7 +31,6 @@
     align-content: center;
 }
 .input-wrapper:hover{
-    /* outline :var(--hightlight-border) */
 }
 .input-wrapper:active{
     outline-color: var(--hightlight-border);

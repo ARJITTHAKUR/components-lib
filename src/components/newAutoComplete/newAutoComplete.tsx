@@ -22,7 +22,6 @@ export default function NewAutoComplete({ options }: props) {
 
   const handleClick = () => {
     setClicked((prev) => !prev);
-    // wrapperRef.current.style.pointerEvents = 'none'
     inputRef.current.focus();
   };
 

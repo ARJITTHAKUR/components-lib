@@ -37,7 +37,6 @@ export default function NewList({options, onSelect, position}:props){
               width: position.offsetWidth,
               transform: transformValue,
               zIndex: 10,
-              // height: "15rem",
               overflowY: "scroll",
               maxHeight: "15rem",
               minHeight: "3rem",
@@ -55,7 +54,6 @@ export default function NewList({options, onSelect, position}:props){
                             onClick={(e) => onSelect(str)}
                             tabIndex={0}
                             role="listitem"
-                            // onKeyDown={(e)=>}
                             >{str}</li>
                         </>
                     }) : <li className="option-style">No Options</li>
