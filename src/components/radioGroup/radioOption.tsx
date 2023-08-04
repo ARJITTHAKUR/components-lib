@@ -15,7 +15,6 @@ export default function RadioOption(props:props){
     const inputRef = useRef<HTMLInputElement>(null)
     const handleClick = (e)=>{
         setChecked(prev=>!prev)
-        // inputRef.current.checked = true
         inputRef.current.click()
         ripple.current.className = "radio_ripple"
         const timer = setTimeout(()=>{
@@ -24,7 +23,6 @@ export default function RadioOption(props:props){
         },300)
     }
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>)=>{
-        // console.log("changed",e.target.checked)
         props.onChange(e);
     }
     useEffect(()=>{

@@ -59,17 +59,6 @@ export default function SideNavigation() {
           }}
         >
           <ul className="nav-ul">
-            {/* <li className="li_item">
-              <NavLink
-                to={`test`}
-                onClick={() => toggleNav()}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active" : ""
-                }
-              >
-                Test Component
-              </NavLink>
-            </li> */}
             <li >
               <NavLink
                 to={`autocomplete`}
