@@ -10,6 +10,7 @@ import ButtonsPage from './pages/buttonsPage/buttonsPage';
 import CheckBoxPage from './pages/checkbox/checkboxPage';
 import RadioGroupPage from './pages/radioGroup/radioGroupPage';
 import RatingPage from './pages/rating/ratingPage';
+import Tree from './pages/tree/tree';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,10 @@ const router = createBrowserRouter([
         path : "rating",
         element : <RatingPage/>
       },
-      
+      {
+        path : "tree",
+        element : <Tree/>
+      }
     ]
   }
 ]);

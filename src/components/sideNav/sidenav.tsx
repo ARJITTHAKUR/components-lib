@@ -114,6 +114,17 @@ export default function SideNavigation() {
                Rating
               </NavLink>
             </li>
+            <li >
+              <NavLink
+                to={`tree`}
+                onClick={() => toggleNav()}
+                className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : "notactive"
+              }
+              >
+               Tree
+              </NavLink>
+            </li>
           </ul>
           <div className="close-btn-container">
             <button
