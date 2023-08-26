@@ -44,7 +44,7 @@
 }
 .nav-ul li {
   width: 100%;
-  text-align: center;
+  /* text-align: center; */
 }
 .nav-ul li:hover {
     background-color: var(--light-text-hover);

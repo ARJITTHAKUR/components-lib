@@ -125,6 +125,17 @@ export default function SideNavigation() {
                Tree
               </NavLink>
             </li>
+            <li >
+              <NavLink
+                to={`tabs`}
+                onClick={() => toggleNav()}
+                className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active" : "notactive"
+              }
+              >
+               Tabs
+              </NavLink>
+            </li>
           </ul>
           <div className="close-btn-container">
             <button
