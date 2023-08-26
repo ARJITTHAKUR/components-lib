@@ -1,0 +1,14 @@
+@import url("../../global/variable.css");
+
+
+
+.tabs_button{
+    border: 1px solid var(--light-text-color);
+    border-radius: 2px;
+    appearance: unset;
+    padding: 0.5rem 1rem;
+}
+
+.tabs_button:hover{
+    background-color: var(--light_text_white);
+}
