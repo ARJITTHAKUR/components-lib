@@ -1,0 +1,8 @@
+@import url("../../global/variable.css");
+
+.tab_content {
+    border: 1px solid lightslategray;
+    padding: 1rem;
+    border-radius: 2px;
+    margin: 0.5rem 0rem;
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Tab from "../../components/tabs/tab";
 import Tabs from "../../components/tabs/tabs";
-
+import classes from "./style.module.css"
 export default function TabsPage() {
   const [value, setValue] = useState('1');
   return (
@@ -11,18 +11,27 @@ export default function TabsPage() {
           <h3>Tabs Component</h3>
           <div>
           <Tabs setState={setValue}>
-            <Tab lable={"one"} index={1}/> 
-            <Tab lable={"two"} index={2}/>  
-            <Tab lable={"three"} index={3}/>  
+            <Tab lable={"One"} index={1}/> 
+            <Tab lable={"Two"} index={2}/>  
+            <Tab lable={"Three"} index={3}/>  
           </Tabs>
-          <div style={{display:value === '1' ? 'block' : 'none'}}>
-            one
+          <div style={{display:value === '1' ? 'block' : 'none'}} className={classes.tab_content}>
+            <h5>One</h5>
+            <p>
+              Data for one
+            </p>
           </div>
-          <div style={{display:value === '2' ? 'block' : 'none'}}>
-            two
+          <div style={{display:value === '2' ? 'block' : 'none'}} className={classes.tab_content}>
+          <h5>Two</h5>
+            <p>
+              Data for two
+            </p>
           </div>
-          <div style={{display:value === '3' ? 'block' : 'none'}}>
-            three
+          <div style={{display:value === '3' ? 'block' : 'none'}} className={classes.tab_content}>
+          <h5>Three</h5>
+            <p>
+              Data for three
+            </p>
           </div>
           </div>
         </section>

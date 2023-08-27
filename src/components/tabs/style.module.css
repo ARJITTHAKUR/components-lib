@@ -7,8 +7,10 @@
     border-radius: 2px;
     appearance: unset;
     padding: 0.5rem 1rem;
+    font-weight: bold;
+    color: rgb(72, 71, 71);
 }
 
 .tabs_button:hover{
-    background-color: var(--light_text_white);
+    background-color: lightgrey;
 }

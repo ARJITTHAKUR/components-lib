@@ -20,16 +20,25 @@
 
 .main-container {
     display: flex;
+    flex-direction: column;
     flex: 5;
     /* background-color: var(--darkblue-background); */
     padding: 1rem;
     overflow-y: scroll;
 }
-
+.page_title {
+    color: rgb(45, 45, 45);
+    font:unset;
+    font-size: larger;
+    font-weight: 500;
+}
 
 @media (max-width: 600px) {
 .app-container{
     margin-top: 1rem;
     width: 100%;
+}
+.page_title {
+    margin:auto
 }
 }

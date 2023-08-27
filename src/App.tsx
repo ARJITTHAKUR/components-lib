@@ -19,6 +19,10 @@ const router = createBrowserRouter([
     element: <GlobalLayout/>,
     children :[
       {
+        path : '',
+        element : <AutocompletePage/>
+      },
+      {
         path : '*',
         element : <AutocompletePage/>
       },
