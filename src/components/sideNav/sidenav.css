@@ -1,10 +1,9 @@
 @import "../../global/variable.css";
 
 .floating_toggle {
-  position: absolute;
-  top: 0;
+  position: sticky;
+  top: 1rem;
   left: 0;
-  /* margin: 0.5rem; */
 }
 
 .nav_container {
@@ -98,7 +97,7 @@
 
 @media (max-width: 600px) {
   .nav_container {
-    height: 100%;
+    height: 100vh;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -123,6 +122,7 @@
   .nav_container::before {
     display: block;
     content: "Components Library";
+    margin-top: 1rem;
     font: unset;
     font-size: larger;
     font-weight: 500;
@@ -136,7 +136,7 @@
     display: block;
     position: absolute;
     border: none;
-    top: 0;
+    top: 1rem;
     left: 0.5rem;
     background-color: white;
     border: 1px solid black;
