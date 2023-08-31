@@ -58,6 +58,9 @@ export default function SideNavigation() {
             display: navClose ? "none" : "block",
           }}
         >
+          <div className="nav_flex_container">
+            
+          
           <ul className="nav-ul">
             <li >
               <NavLink
@@ -144,6 +147,7 @@ export default function SideNavigation() {
             >
               Close
             </button>
+          </div>
           </div>
         </nav>
       )}
