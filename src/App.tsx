@@ -13,52 +13,95 @@ import RatingPage from './pages/rating/ratingPage';
 import Tree from './pages/tree/treepage';
 import TabsPage from './pages/tabs/tabspage';
 
-const router = createBrowserRouter([
-  {
-    path: "/components-lib/",
-    element: <GlobalLayout/>,
-    children :[
-      {
-        path : '',
-        element : <AutocompletePage/>
-      },
-      {
-        path : '*',
-        element : <AutocompletePage/>
-      },
-      {
-        path : "test",
-        element : <TestComponent/>
-      },
-      {
-        path : "button",
-        element : <ButtonsPage/>
-      },
-      {
-        path : "checkbox",
-        element : <CheckBoxPage/>
-      },
-      {
-        path : "radiogroup",
-        element : <RadioGroupPage/>
-      },
-      {
-        path : "rating",
-        element : <RatingPage/>
-      },
-      {
-        path : "tree",
-        element : <Tree/>
-      },
-      {
-        path : "tabs",
-        element : <TabsPage/>
-      }
-    ]
-  }
-]);
-function App() {
 
+function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/components-lib/",
+      element: <GlobalLayout/>,
+      children :[
+        {
+          path : '',
+          element : <AutocompletePage/>
+        },
+        {
+          path : '*',
+          element : <AutocompletePage/>
+        },
+        {
+          path : "test",
+          element : <TestComponent/>
+        },
+        {
+          path : "button",
+          element : <ButtonsPage/>
+        },
+        {
+          path : "checkbox",
+          element : <CheckBoxPage/>
+        },
+        {
+          path : "radiogroup",
+          element : <RadioGroupPage/>
+        },
+        {
+          path : "rating",
+          element : <RatingPage/>
+        },
+        {
+          path : "tree",
+          element : <Tree/>
+        },
+        {
+          path : "tabs",
+          element : <TabsPage/>
+        }
+      ]
+    },
+    {
+      path: "/",
+      element: <GlobalLayout/>,
+      children :[
+        {
+          path : '',
+          element : <AutocompletePage/>
+        },
+        {
+          path : '*',
+          element : <AutocompletePage/>
+        },
+        {
+          path : "test",
+          element : <TestComponent/>
+        },
+        {
+          path : "button",
+          element : <ButtonsPage/>
+        },
+        {
+          path : "checkbox",
+          element : <CheckBoxPage/>
+        },
+        {
+          path : "radiogroup",
+          element : <RadioGroupPage/>
+        },
+        {
+          path : "rating",
+          element : <RatingPage/>
+        },
+        {
+          path : "tree",
+          element : <Tree/>
+        },
+        {
+          path : "tabs",
+          element : <TabsPage/>
+        }
+      ]
+    }
+    
+  ]);
   return (
     <>
      <RouterProvider router={router} />

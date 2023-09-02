@@ -7,5 +7,5 @@ export default defineConfig({
   base :'/components-lib/',
   build:{
     sourcemap :true
-  }
+  },
 })
