@@ -1,4 +1,3 @@
-import AutoComplete from "../../components/autocomplete/Autocomplete";
 import NewAutoComplete from "../../components/newAutoComplete/newAutoComplete";
 
 export default function AutocompletePage() {
@@ -40,18 +39,11 @@ export default function AutocompletePage() {
     <>
       <div className="container">
         <section className="section-display">
-        <h3 className="color-light">Default Autocomplete</h3>
-        <pre>
-                <code>
-                  
-                &lt;NewAutoComplete 
-          /&gt;
-          options=list
-                </code>
-            </pre>
-          <NewAutoComplete 
-           options={list.map((ele) => ele.label)}
-          />
+          <h3 className="color-light">Default Autocomplete</h3>
+          <pre>
+            <code>&lt;NewAutoComplete /&gt; options=list</code>
+          </pre>
+          <NewAutoComplete options={list.map((ele) => ele.label)} />
         </section>
       </div>
     </>

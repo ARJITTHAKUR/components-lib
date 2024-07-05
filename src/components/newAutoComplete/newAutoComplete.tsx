@@ -18,8 +18,6 @@ export default function NewAutoComplete({ options }: props) {
   const inputRef = useRef<HTMLInputElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const listRef = useRef<HTMLUListElement>(null);
-
   const handleClick = () => {
     setClicked((prev) => !prev);
     inputRef.current.focus();
@@ -31,32 +29,21 @@ export default function NewAutoComplete({ options }: props) {
     }
   };
 
-  const removeItem = (idx) => {
-    // setMultiList((prev) => prev.filter((_, indx) => indx !== idx));
-  };
-
   const handleChange = (e) => {
-    if(!clicked)
-    setClicked(true)
+    if (!clicked) setClicked(true);
     const regEx = new RegExp(e.target.value, "gi");
     const filtered = options.filter((ele) => regEx.test(ele));
     setoptionList(filtered);
-  };
-
-  const handleRemove = () => {
-    inputRef.current.value = "";
-    setoptionList(options);
   };
 
   const handleSelect = (data: string) => {
     inputRef.current.value = data;
     setClicked(false);
   };
-  const clearInput = (e: React.MouseEvent)=>{
-    e.preventDefault()
-    inputRef.current.value = ''
-
-  }
+  const clearInput = (e: React.MouseEvent) => {
+    e.preventDefault();
+    inputRef.current.value = "";
+  };
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
     return () => {
@@ -65,11 +52,7 @@ export default function NewAutoComplete({ options }: props) {
   }, [wrapperRef]);
   return (
     <div
-      className={
-        clicked || inputRef?.current?.value?.length > 0
-          ? "wrapper_clicked"
-          : "new_input_wrapper"
-      }
+      className={clicked ? "wrapper_clicked" : "new_input_wrapper"}
       onClick={() => {
         handleClick();
       }}
@@ -92,19 +75,26 @@ export default function NewAutoComplete({ options }: props) {
         onChange={(e) => handleChange(e)}
       />
       <span className="btn_container">
-      <span tabIndex={-1}><XMarkIcon height={20} width={20} onClick={(e)=>clearInput(e)}
-       style={{visibility : inputRef?.current?.value.length > 0  ? 'visible':'hidden',
-       cursor:"pointer",
-       }}
-       /></span>
-    
-      <button className="input_icon_btn" tabIndex={-1}>
-        <ChevronDownIcon
-          height={20}
-          width={20}
-          className={clicked ? "btn_up" : "btn_down"}
-        />
-      </button>
+        <span tabIndex={-1}>
+          <XMarkIcon
+            height={20}
+            width={20}
+            onClick={(e) => clearInput(e)}
+            style={{
+              visibility:
+                inputRef?.current?.value.length > 0 ? "visible" : "hidden",
+              cursor: "pointer",
+            }}
+          />
+        </span>
+
+        <button className="input_icon_btn" tabIndex={-1}>
+          <ChevronDownIcon
+            height={20}
+            width={20}
+            className={clicked ? "btn_up" : "btn_down"}
+          />
+        </button>
       </span>
 
       <fieldset
