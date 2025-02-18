@@ -1,112 +1,116 @@
-import { useState } from 'react'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import { GlobalLayout } from './layout/global/global';
-import TestComponent from './components/testComponent/testComponent';
-import AutocompletePage from './pages/autocomplete/autocompletePage';
-import ButtonsPage from './pages/buttonsPage/buttonsPage';
-import CheckBoxPage from './pages/checkbox/checkboxPage';
-import RadioGroupPage from './pages/radioGroup/radioGroupPage';
-import RatingPage from './pages/rating/ratingPage';
-import Tree from './pages/tree/treepage';
-import TabsPage from './pages/tabs/tabspage';
-
+import { useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { GlobalLayout } from "./layout/global/global";
+import TestComponent from "./components/testComponent/testComponent";
+import AutocompletePage from "./pages/autocomplete/autocompletePage";
+import ButtonsPage from "./pages/buttonsPage/buttonsPage";
+import CheckBoxPage from "./pages/checkbox/checkboxPage";
+import RadioGroupPage from "./pages/radioGroup/radioGroupPage";
+import RatingPage from "./pages/rating/ratingPage";
+import Tree from "./pages/tree/treepage";
+import TabsPage from "./pages/tabs/tabspage";
+import { Mentions } from "./pages/mentions";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/components-lib/",
-      element: <GlobalLayout/>,
-      children :[
+      element: <GlobalLayout />,
+      children: [
         {
-          path : '',
-          element : <AutocompletePage/>
+          path: "",
+          element: <AutocompletePage />,
         },
         {
-          path : '*',
-          element : <AutocompletePage/>
+          path: "*",
+          element: <AutocompletePage />,
         },
         {
-          path : "test",
-          element : <TestComponent/>
+          path: "test",
+          element: <TestComponent />,
         },
         {
-          path : "button",
-          element : <ButtonsPage/>
+          path: "button",
+          element: <ButtonsPage />,
         },
         {
-          path : "checkbox",
-          element : <CheckBoxPage/>
+          path: "checkbox",
+          element: <CheckBoxPage />,
         },
         {
-          path : "radiogroup",
-          element : <RadioGroupPage/>
+          path: "radiogroup",
+          element: <RadioGroupPage />,
         },
         {
-          path : "rating",
-          element : <RatingPage/>
+          path: "rating",
+          element: <RatingPage />,
         },
         {
-          path : "tree",
-          element : <Tree/>
+          path: "tree",
+          element: <Tree />,
         },
         {
-          path : "tabs",
-          element : <TabsPage/>
-        }
-      ]
+          path: "tabs",
+          element: <TabsPage />,
+        },
+        {
+          path: "mentions",
+          element: <Mentions />,
+        },
+      ],
     },
     {
       path: "/",
-      element: <GlobalLayout/>,
-      children :[
+      element: <GlobalLayout />,
+      children: [
         {
-          path : '',
-          element : <AutocompletePage/>
+          path: "",
+          element: <AutocompletePage />,
         },
         {
-          path : '*',
-          element : <AutocompletePage/>
+          path: "*",
+          element: <AutocompletePage />,
         },
         {
-          path : "test",
-          element : <TestComponent/>
+          path: "test",
+          element: <TestComponent />,
         },
         {
-          path : "button",
-          element : <ButtonsPage/>
+          path: "button",
+          element: <ButtonsPage />,
         },
         {
-          path : "checkbox",
-          element : <CheckBoxPage/>
+          path: "checkbox",
+          element: <CheckBoxPage />,
         },
         {
-          path : "radiogroup",
-          element : <RadioGroupPage/>
+          path: "radiogroup",
+          element: <RadioGroupPage />,
         },
         {
-          path : "rating",
-          element : <RatingPage/>
+          path: "rating",
+          element: <RatingPage />,
         },
         {
-          path : "tree",
-          element : <Tree/>
+          path: "tree",
+          element: <Tree />,
         },
         {
-          path : "tabs",
-          element : <TabsPage/>
-        }
-      ]
-    }
-    
+          path: "tabs",
+          element: <TabsPage />,
+        },
+        {
+          path: "mentions",
+          element: <Mentions />,
+        },
+      ],
+    },
   ]);
   return (
     <>
-     <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
